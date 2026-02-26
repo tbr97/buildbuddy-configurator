@@ -17,13 +17,13 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="group relative flex flex-col rounded-xl border border-border bg-card p-6 card-elevated"
+      className="group relative flex flex-col rounded-xl neon-border bg-card p-6 card-elevated"
     >
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all group-hover:bg-primary group-hover:text-primary-foreground group-hover:glow-pink">
         <Icon className="h-6 w-6" />
       </div>
 
-      <h3 className="mb-2 font-display text-lg font-semibold text-card-foreground">
+      <h3 className="mb-2 font-display text-sm font-semibold uppercase tracking-wider text-card-foreground">
         {service.title}
       </h3>
 
@@ -31,7 +31,7 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
         {service.description}
       </p>
 
-      <ul className="mb-4 space-y-1">
+      <ul className="mb-4 space-y-1.5">
         {service.features.map((f) => (
           <li key={f} className="flex items-center gap-2 text-xs text-muted-foreground">
             <span className="h-1 w-1 rounded-full bg-accent" />
@@ -40,17 +40,17 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
         ))}
       </ul>
 
-      {service.id === "assemblaggio" ? (
+      {service.id === "progettazione-pc" ? (
         <Link
           to="/configuratore"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-neon-cyan"
         >
           Configura ora
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Link>
       ) : (
-        <button className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80">
-          Scopri di più
+        <button className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-neon-cyan">
+          Prenota
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </button>
       )}

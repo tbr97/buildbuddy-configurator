@@ -28,7 +28,7 @@ const ComponentSelector = ({ category, selected, onSelect, socketFilter }: Compo
   const brands = [...new Set(mockComponents.filter((c) => c.category === category).map((c) => c.brand))];
 
   return (
-    <div className="rounded-lg border border-border bg-card">
+    <div className="rounded-lg neon-border bg-card">
       <button
         onClick={() => setOpen(!open)}
         className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-muted/50"
