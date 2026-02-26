@@ -11,7 +11,7 @@ interface PriceSummaryProps {
 
 const PriceSummary = ({ selected, totalPrice, warnings, selectedCount }: PriceSummaryProps) => {
   return (
-    <div className="rounded-xl border border-border bg-card p-5 card-elevated">
+    <div className="rounded-xl neon-border bg-card p-5 card-elevated">
       <div className="mb-4 flex items-center gap-2">
         <Package className="h-5 w-5 text-primary" />
         <h3 className="font-display text-lg font-semibold">Riepilogo</h3>

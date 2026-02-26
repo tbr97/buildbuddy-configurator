@@ -21,7 +21,7 @@ const Configurator = () => {
   const socketFilter = selected.motherboard?.socket;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <section className="hero-gradient py-12">
         <div className="container">
           <motion.div
@@ -29,14 +29,14 @@ const Configurator = () => {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center gap-3"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/20">
-              <Cpu className="h-5 w-5 text-primary-foreground" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/20 glow-pink">
+              <Cpu className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h1 className="font-display text-2xl font-bold text-primary-foreground md:text-3xl">
+              <h1 className="font-display text-xl font-bold uppercase tracking-wider text-gradient md:text-2xl">
                 Configuratore PC
               </h1>
-              <p className="text-sm text-primary-foreground/60">
+              <p className="text-sm text-muted-foreground">
                 Seleziona i componenti e verifica la compatibilità in tempo reale
               </p>
             </div>
@@ -46,7 +46,6 @@ const Configurator = () => {
 
       <div className="container py-8">
         <div className="grid gap-8 lg:grid-cols-[1fr_340px]">
-          {/* Component selectors */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -54,7 +53,9 @@ const Configurator = () => {
             className="space-y-3"
           >
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="font-display text-lg font-semibold">Componenti</h2>
+              <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-foreground">
+                Componenti
+              </h2>
               <SaveSharePanel
                 exportConfig={exportConfig}
                 shareLink={shareLink}
@@ -74,7 +75,6 @@ const Configurator = () => {
             ))}
           </motion.div>
 
-          {/* Sidebar summary */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
